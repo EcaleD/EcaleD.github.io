@@ -10,7 +10,7 @@ tags = [
     "themes",
 ]
 categories = [
-    "automation",
+    "aaa",
 ]
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
@@ -44,10 +44,12 @@ In addition, my project leverages the PostgreSQL regression testing tool, [`pg_r
 
 Here’s how the automation test works:
 
-![Automation Testing Flow](/assets/img/doc-automation-flow.png)
+![Automation Testing Flow](doc-automation-flow.png)
 
 ````
-DB updated → CI pipeline triggered → (In VM) Pull test cases → Install the latest DB →  Run the tests → Return test results → Clean up the env
+DB updated → CI pipeline triggered → (In VM) Pull test cases → 
+Install the latest DB →  Run the tests → 
+Return test results → Clean up the env
 ````
 
 Below is a breakdown of how it was established:
@@ -63,7 +65,7 @@ Setting up a full test framework or pipeline from scratch isn’t realistic. So 
 
 First, you need an environment to run tests. For my case, the pipeline uses `pg_regress` to execute SQL scripts on a live database. So I needed a VM where the pipeline could install the latest DB, add test cases, and run the tests.
 
-With the help of a test engineer, I got a script that set up and initializes the regression test flow.  (This can be done by a writer too, through reading the code of the test pipeline. But it would take much longer.)
+With the help of a test engineer, I got a script that set up and initializes the regression test flow. (This can be done by a writer too, through reading the code of the test pipeline. But it would take much longer.)
 
 You’ll need to check with your dev team about how they manage test environments and mirror the configuration and the launch method. 
 

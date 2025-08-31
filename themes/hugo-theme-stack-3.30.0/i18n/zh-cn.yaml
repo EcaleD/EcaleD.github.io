@@ -61,7 +61,7 @@ search:
 
 footer:
     builtWith:
-        other: 使用 {{ .Generator }} 构建
+        other: Powered by {{ .Generator }}
 
     designedBy:
-        other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计
+        other: The {{ .Theme }} theme is designed by {{ .DesignedBy }}
