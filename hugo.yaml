@@ -1,8 +1,8 @@
 baseurl: https://example.com/
 languageCode: en-us
 theme: hugo-theme-stack-3.30.0
-title: Example Site
-copyright: Example Person
+title: Xiaokai's Blog
+copyright: Xiaokai Dong
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -20,13 +20,15 @@ languages:
         params:
             sidebar:
                 subtitle: Technical Writer
-    zh-cn:
-        languageName: 中文
-        title: Xiaokai's Blog
-        weight: 2
-        params:
-            sidebar:
-                subtitle: Technical Writer
+
+# Comment out zh-cn
+#    zh-cn:
+#        languageName: 中文
+#        title: Xiaokai's Blog
+#        weight: 2
+#        params:
+#            sidebar:
+#                subtitle: Technical Writer
 
 services:
     # Change it to your Disqus shortname before using
@@ -51,7 +53,7 @@ params:
     favicon: /home.png # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
-        since: 2020
+        since: 2025
         customText:
 
     dateFormat:
@@ -64,7 +66,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/avatar.jpeg
 
     article:
         math: false
@@ -207,23 +209,18 @@ menu:
     main: []
 
     social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
-          params:
-              icon: brand-github
-
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
-          params:
-              icon: brand-twitter
 
         - identifier: linkedin
           name: Linkedin
-          url: https://www.linkedin.com/
+          url: https://www.linkedin.com/in/xiaokai-dong/
           params:
               icon: brand-linkedin
+
+        - identifier: github
+          name: GitHub
+          url: https://github.com/EcaleD/EcaleD.github.io
+          params:
+              icon: brand-github
 
 related:
     includeNewer: true

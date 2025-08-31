@@ -4,17 +4,15 @@ title = "Automate testing in the technical documentation workflow"
 date = "2025-08-27"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
-    "markdown",
-    "css",
-    "html",
-    "themes",
+    "Test",
+    "Automation",
 ]
 categories = [
-    "aaa",
+    "Doc Workflow",
 ]
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
-image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
+image = "header_image_by_gpt.png"
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
