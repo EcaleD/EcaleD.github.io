@@ -2,7 +2,7 @@
 author = "Hugo Authors"
 title = "Automate testing in the technical documentation workflow"
 date = "2025-08-27"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "An experimental database documentaion CI pipeline that can detect issues caused by product updates."
 tags = [
     "Test",
     "Automation",
