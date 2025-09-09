@@ -13,8 +13,7 @@
         <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/</guid>
-        <description>&lt;img src="http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.png" alt="Featured image of post Automate testing in the technical documentation workflow" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h1 id=&#34;automate-testing-in-the-technical-documentation-workflow&#34;&gt;Automate testing in the technical documentation workflow
+        <description>&lt;img src="http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.png" alt="Featured image of post Automate testing in the technical documentation workflow" /&gt;&lt;h1 id=&#34;automate-testing-in-the-technical-documentation-workflow&#34;&gt;Automate testing in the technical documentation workflow
 &lt;/h1&gt;&lt;p&gt;Keeping technical documentation up‑to‑date is a challenging task. It requires a mechanism to detect discrepancies between the product and the documentation. Without a procedural guarantee, existing docs can be overlooked, since documenting new features takes priority.&lt;/p&gt;
 &lt;p&gt;One advantage of doc-as-code is that it brings documentation closer to the product code, thereby making it more likely to be built and tested automatically.&lt;/p&gt;
 &lt;h2 id=&#34;background&#34;&gt;Background

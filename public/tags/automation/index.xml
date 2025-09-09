@@ -9,12 +9,11 @@
         <copyright>Xiaokai Dong</copyright>
         <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Automate testing in the technical documentation workflow</title>
-        <link>http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/</link>
+        <link>http://localhost:1313/categories/test/doc-test-automation/</link>
         <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/</guid>
-        <description>&lt;img src="http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.png" alt="Featured image of post Automate testing in the technical documentation workflow" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;
-&lt;h1 id=&#34;automate-testing-in-the-technical-documentation-workflow&#34;&gt;Automate testing in the technical documentation workflow
+        <guid>http://localhost:1313/categories/test/doc-test-automation/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/test/doc-test-automation/header_image_by_gpt.png" alt="Featured image of post Automate testing in the technical documentation workflow" /&gt;&lt;h1 id=&#34;automate-testing-in-the-technical-documentation-workflow&#34;&gt;Automate testing in the technical documentation workflow
 &lt;/h1&gt;&lt;p&gt;Keeping technical documentation up‑to‑date is a challenging task. It requires a mechanism to detect discrepancies between the product and the documentation. Without a procedural guarantee, existing docs can be overlooked, since documenting new features takes priority.&lt;/p&gt;
 &lt;p&gt;One advantage of doc-as-code is that it brings documentation closer to the product code, thereby making it more likely to be built and tested automatically.&lt;/p&gt;
 &lt;h2 id=&#34;background&#34;&gt;Background
@@ -28,10 +27,10 @@
     &gt;&lt;code&gt;pg_regress&lt;/code&gt;&lt;/a&gt;, to do the actual testing work. With &lt;code&gt;pg_regress&lt;/code&gt; you simply create test cases in SQL; the tool runs them and returns the results and debugging information.&lt;/p&gt;
 &lt;h2 id=&#34;flow&#34;&gt;Flow
 &lt;/h2&gt;&lt;p&gt;Here’s how the automation test works:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/doc-automation-flow.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/categories/test/doc-test-automation/doc-automation-flow.png&#34;
 	width=&#34;3928&#34;
 	height=&#34;2516&#34;
-	srcset=&#34;http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/doc-automation-flow_hu_3747baf4cb14fb20.png 480w, http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/doc-automation-flow_hu_1064df61f8da2973.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/categories/test/doc-test-automation/doc-automation-flow_hu_3747baf4cb14fb20.png 480w, http://localhost:1313/categories/test/doc-test-automation/doc-automation-flow_hu_1064df61f8da2973.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Automation Testing Flow&#34;
