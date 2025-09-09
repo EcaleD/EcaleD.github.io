@@ -1,0 +1,12 @@
+<section class="article-share">
+    <span>Share:</span>
+    <a href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        {{ partial "helper/icon" "brand-twitter" }}
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        {{ partial "helper/icon" "brand-facebook" }}
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        {{ partial "helper/icon" "brand-linkedin" }}
+    </a>
+</section>
