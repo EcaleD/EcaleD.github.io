@@ -33,7 +33,7 @@ languages:
 services:
     # Change it to your Disqus shortname before using
     disqus:
-        shortname: "hugo-theme-stack"
+        shortname: ecaled
     # GA Tracking ID
     googleAnalytics:
         id:
@@ -81,7 +81,7 @@ params:
         provider: disqus
 
         disqusjs:
-            shortname:
+            shortname: ecaled
             apiUrl:
             apiKey:
             admin:
