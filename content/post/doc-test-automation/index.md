@@ -15,8 +15,6 @@ image = "header_image_by_gpt.png"
 
 <!--more-->
 
-# Automate testing in the technical documentation workflow
-
 Keeping technical documentation up‑to‑date is a challenging task. It requires a mechanism to detect discrepancies between the product and the documentation. Without a procedural guarantee, existing docs can be overlooked, since documenting new features takes priority.
 
 One advantage of doc-as-code is that it brings documentation closer to the product code, thereby making it more likely to be built and tested automatically. 
@@ -39,12 +37,10 @@ In addition, my project leverages the PostgreSQL regression testing tool, [`pg_r
 
 Here’s how the automation test works:
 
-![Automation Testing Flow](doc-automation-flow.png)
+![Automation Testing Flow](doc-automation-flow.jpeg)
 
 ````
-DB updated → CI pipeline triggered → (In VM) Pull test cases → 
-Install the latest DB →  Run the tests → 
-Return test results → Clean up the env
+DB updated → CI pipeline triggered → (In VM) Pull test cases → Install the latest DB →  Run the tests → Return test results → Clean up the env
 ````
 
 Below is a breakdown of how it was established:
@@ -54,7 +50,7 @@ Below is a breakdown of how it was established:
 Setting up a full test framework or pipeline from scratch isn’t realistic. So this trial relies on a few prerequisites:
 - Your development team already has a CI pipeline.
 - Test cases are not difficult to be created. In my case, the test tool uses SQL syntax, which isn’t too complex for a database tech writer.
-- You have access and permissions to required resources (e.g., VM creation in the dev/test environment).
+- You have access and permissions to required resources.
 
 ## Step 1: Set up a VM for testing
 
@@ -132,6 +128,8 @@ My script does the following:
 
 3. Run the tests and print the results.
 4. Clean up the environment.
+
+    *Example code for steps 3 and 4 is excluded, since it applies only to the DB service.*
 
 ## Step 3: Register a GitLab Runner
 
