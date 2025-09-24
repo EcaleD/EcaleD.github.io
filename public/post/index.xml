@@ -267,7 +267,7 @@ Example code:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;By now, the pipeline has been built up. The next thing is to create test cases and get the pipeline run when DB is updated!&lt;/p&gt;
-&lt;h2 id=&#34;write-the-test-cases&#34;&gt;Write the test cases
+&lt;h2 id=&#34;develope-test-cases&#34;&gt;Develope test cases
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;pg_regress&lt;/code&gt; makes it simple to write tests. For each test case, it requires two files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;code&gt;.sql&lt;/code&gt; file that contains the SQL commands to be run&lt;/li&gt;
@@ -287,6 +287,27 @@ Example code:&lt;/p&gt;
 &lt;li&gt;AI could be leveraged to convert existing tutorials into test cases, which would significantly expand the scope of the test.&lt;/li&gt;
 &lt;li&gt;Enterprise databases often integrate with broader architectures (e.g., Hadoop or Hive). If the workflow can set up environments for those integration use cases, more complex tutorials could be included in the testing.&lt;/li&gt;
 &lt;/ol&gt;</description>
+        </item>
+        <item>
+        <title>Learn Unity basics by making a fun little game!</title>
+        <link>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</link>
+        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</guid>
+        <description>&lt;img src="http://localhost:1313/header_image_by_gpt.png" alt="Featured image of post Learn Unity basics by making a fun little game!" /&gt;&lt;p&gt;Enjoy this video!&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background
+&lt;/h2&gt;&lt;p&gt;Enjoy&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/XtQMytORBmM&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;background-1&#34;&gt;Background
+&lt;/h2&gt;</description>
         </item>
         
     </channel>

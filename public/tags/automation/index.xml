@@ -267,7 +267,7 @@ Example code:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;By now, the pipeline has been built up. The next thing is to create test cases and get the pipeline run when DB is updated!&lt;/p&gt;
-&lt;h2 id=&#34;write-the-test-cases&#34;&gt;Write the test cases
+&lt;h2 id=&#34;develope-test-cases&#34;&gt;Develope test cases
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;pg_regress&lt;/code&gt; makes it simple to write tests. For each test case, it requires two files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A &lt;code&gt;.sql&lt;/code&gt; file that contains the SQL commands to be run&lt;/li&gt;
