@@ -53,7 +53,7 @@
 &lt;/h2&gt;&lt;p&gt;Setting up a full test framework or pipeline from scratch isn’t realistic. So this trial relies on a few prerequisites:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Your development team already has a CI pipeline.&lt;/li&gt;
-&lt;li&gt;Test cases are not difficult to be created. In my case, the test tool uses SQL syntax, which isn’t too complex for a database tech writer.&lt;/li&gt;
+&lt;li&gt;Test cases are not difficult to be created. In my case, the test tool uses SQL syntax.&lt;/li&gt;
 &lt;li&gt;You have access and permissions to required resources.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;step-1-set-up-a-vm-for-testing&#34;&gt;Step 1: Set up a VM for testing
@@ -186,6 +186,7 @@ Example code:&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Clean up the environment.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Example code for steps 3 and 4 is excluded, since it applies only to the DB service.&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;step-3-register-a-gitlab-runner&#34;&gt;Step 3: Register a GitLab Runner
@@ -218,8 +219,8 @@ Example code:&lt;/p&gt;
 &lt;li&gt;Get a registration token from your GitLab project: &lt;strong&gt;Settings &amp;gt; CI/CD &amp;gt; Runners &amp;gt; Expand &amp;ldquo;Set up a specific Runner manually&amp;rdquo;&lt;/strong&gt;.&lt;/li&gt;
 &lt;li&gt;On the VM, run: &lt;code&gt;sudo gitlab-runner register&lt;/code&gt;, then follow the prompts to complete the registration:
 &lt;ul&gt;
-&lt;li&gt;GitLab instance URL: e.g., &lt;a class=&#34;link&#34; href=&#34;https://gitlab.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://gitlab.com&lt;/a&gt; or your self-hosted instance&lt;/li&gt;
+&lt;li&gt;GitLab instance URL: e.g., &lt;a class=&#34;link&#34; href=&#34;https://gitlab.example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://gitlab.example.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Registration token: from the UI&lt;/li&gt;
 &lt;li&gt;Description: a name to identify the runner&lt;/li&gt;
 &lt;li&gt;Tags: optional&lt;/li&gt;

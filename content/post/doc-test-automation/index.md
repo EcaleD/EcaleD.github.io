@@ -1,8 +1,8 @@
 +++
-author = "Hugo Authors"
+author = "Xiaokai Dong"
 title = "Automate testing in the technical documentation workflow"
 date = "2025-08-27"
-description = "An experimental database documentaion CI pipeline that can detect issues caused by product updates."
+description = "Building an experimental CI pipeline to test and safeguard database documentation against product changes."
 tags = [
     "Test",
     "Automation",
@@ -49,7 +49,7 @@ Below is a breakdown of how it was established:
 
 Setting up a full test framework or pipeline from scratch isn’t realistic. So this trial relies on a few prerequisites:
 - Your development team already has a CI pipeline.
-- Test cases are not difficult to be created. In my case, the test tool uses SQL syntax, which isn’t too complex for a database tech writer.
+- Test cases are not difficult to be created. In my case, the test tool uses SQL syntax.
 - You have access and permissions to required resources.
 
 ## Step 1: Set up a VM for testing
@@ -149,7 +149,7 @@ GitLab uses runners to execute CI/CD tasks in a given env defined in the `.gitla
 2. Register the Runner:
     1. Get a registration token from your GitLab project: **Settings > CI/CD > Runners > Expand "Set up a specific Runner manually"**.
     2. On the VM, run: `sudo gitlab-runner register`, then follow the prompts to complete the registration:
-        - GitLab instance URL: e.g., [https://gitlab.com](https://gitlab.com) or your self-hosted instance
+        - GitLab instance URL: e.g., [https://gitlab.example.com](https://gitlab.example.com)
         - Registration token: from the UI
         - Description: a name to identify the runner
         - Tags: optional
@@ -179,7 +179,7 @@ This file defines your CI pipeline. Place it in the root of your documentation r
 
 By now, the pipeline has been built up. The next thing is to create test cases and get the pipeline run when DB is updated!
 
-## Write the test cases
+## Develope test cases
 
 `pg_regress` makes it simple to write tests. For each test case, it requires two files:
 - A `.sql` file that contains the SQL commands to be run

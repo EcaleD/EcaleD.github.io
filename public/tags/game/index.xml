@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Game on Xiaokai&#39;s Blog</title>
+        <link>http://localhost:1313/tags/game/</link>
+        <description>Recent content in Game on Xiaokai&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Xiaokai Dong</copyright>
+        <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/game/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Learn Unity basics by making a fun little game!</title>
+        <link>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</link>
+        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</guid>
+        <description>&lt;img src="http://localhost:1313/header_image_by_gpt.png" alt="Featured image of post Learn Unity basics by making a fun little game!" /&gt;&lt;p&gt;Enjoy this video!&lt;/p&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background
+&lt;/h2&gt;&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/VIDEO_ID&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

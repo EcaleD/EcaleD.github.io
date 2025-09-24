@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="An experimental database documentaion CI pipeline that can detect issues caused by product updates.">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Building an experimental CI pipeline to test and safeguard database documentation against product changes.">
 <title>Automate testing in the technical documentation workflow</title>
 
 <link rel='canonical' href='http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Automate testing in the technical documentation workflow">
-<meta property='og:description' content="An experimental database documentaion CI pipeline that can detect issues caused by product updates.">
+<meta property='og:description' content="Building an experimental CI pipeline to test and safeguard database documentation against product changes.">
 <meta property='og:url' content='http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/'>
 <meta property='og:site_name' content='Xiaokai&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Test' /><meta property='article:tag' content='Automation' /><meta property='article:published_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-27T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.png' />
 <meta name="twitter:title" content="Automate testing in the technical documentation workflow">
-<meta name="twitter:description" content="An experimental database documentaion CI pipeline that can detect issues caused by product updates."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Building an experimental CI pipeline to test and safeguard database documentation against product changes."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.png' />
     <link rel="shortcut icon" href="/home.png" />
 
@@ -236,7 +236,7 @@
     <li><a href="#step-2-prepare-the-test-script">Step 2: Prepare the test script</a></li>
     <li><a href="#step-3-register-a-gitlab-runner">Step 3: Register a GitLab Runner</a></li>
     <li><a href="#step-4-create-a-gitlab-ciyml-file">Step 4: Create a .gitlab-ci.yml File</a></li>
-    <li><a href="#write-the-test-cases">Write the test cases</a></li>
+    <li><a href="#develope-test-cases">Develope test cases</a></li>
     <li><a href="#wrap-up">Wrap-up</a></li>
   </ol>
 </nav>
@@ -282,7 +282,7 @@
     
         
         <h3 class="article-subtitle">
-            An experimental database documentaion CI pipeline that can detect issues caused by product updates.
+            Building an experimental CI pipeline to test and safeguard database documentation against product changes.
         </h3>
         
     </div>
@@ -373,7 +373,7 @@
 </h2><p>Setting up a full test framework or pipeline from scratch isn’t realistic. So this trial relies on a few prerequisites:</p>
 <ul>
 <li>Your development team already has a CI pipeline.</li>
-<li>Test cases are not difficult to be created. In my case, the test tool uses SQL syntax, which isn’t too complex for a database tech writer.</li>
+<li>Test cases are not difficult to be created. In my case, the test tool uses SQL syntax.</li>
 <li>You have access and permissions to required resources.</li>
 </ul>
 <h2 id="step-1-set-up-a-vm-for-testing">Step 1: Set up a VM for testing
@@ -539,8 +539,8 @@ Example code:</p>
 <li>Get a registration token from your GitLab project: <strong>Settings &gt; CI/CD &gt; Runners &gt; Expand &ldquo;Set up a specific Runner manually&rdquo;</strong>.</li>
 <li>On the VM, run: <code>sudo gitlab-runner register</code>, then follow the prompts to complete the registration:
 <ul>
-<li>GitLab instance URL: e.g., <a class="link" href="https://gitlab.com"  target="_blank" rel="noopener"
-    >https://gitlab.com</a> or your self-hosted instance</li>
+<li>GitLab instance URL: e.g., <a class="link" href="https://gitlab.example.com"  target="_blank" rel="noopener"
+    >https://gitlab.example.com</a></li>
 <li>Registration token: from the UI</li>
 <li>Description: a name to identify the runner</li>
 <li>Tags: optional</li>
@@ -587,7 +587,7 @@ Example code:</p>
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>By now, the pipeline has been built up. The next thing is to create test cases and get the pipeline run when DB is updated!</p>
-<h2 id="write-the-test-cases">Write the test cases
+<h2 id="develope-test-cases">Develope test cases
 </h2><p><code>pg_regress</code> makes it simple to write tests. For each test case, it requires two files:</p>
 <ul>
 <li>A <code>.sql</code> file that contains the SQL commands to be run</li>
@@ -637,7 +637,14 @@ Example code:</p>
   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
 </svg>
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A1313%2Fp%2Fautomate-testing-in-the-technical-documentation-workflow%2F" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    
+    
+        
+            
+        
+    
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A1313%2Fp%2Fautomate-testing-in-the-technical-documentation-workflow%2F&title=Automate&#43;testing&#43;in&#43;the&#43;technical&#43;documentation&#43;workflow&summary=Building&#43;an&#43;experimental&#43;CI&#43;pipeline&#43;to&#43;test&#43;and&#43;safeguard&#43;database&#43;documentation&#43;against&#43;product&#43;changes.&source=Xiaokai%27s&#43;Blog" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <rect x="4" y="4" width="16" height="16" rx="2" />
