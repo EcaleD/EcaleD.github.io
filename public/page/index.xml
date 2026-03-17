@@ -2,37 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Xiaokai&#39;s Blog</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://example.com/page/</link>
         <description>Recent content in Pages on Xiaokai&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Xiaokai Dong</copyright>
-        <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 15 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>About</title>
-        <link>http://localhost:1313/about/</link>
-        <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+        <link>https://example.com/about/</link>
+        <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/about/</guid>
-        <description>&lt;p&gt;As a senior technical writer, I’ve spent several years creating developer- and end-user-focused documentation for cloud infrastructure, database services, and enterprise management systems. What excites me most is getting hands-on with the products and tools I document—testing, exploring, and then translating complex technologies into clear, practical guidance.&lt;/p&gt;
-&lt;p&gt;Lately I’ve been diving into generative AI and large language models, fascinated by how they’re reshaping the way we work and live.&lt;/p&gt;
-&lt;p&gt;Through this blog, I’ll share insights from my writing career, experiments with new technologies, and reflections on continuous learning and professional growth.&lt;/p&gt;
-&lt;p&gt;If any of these topics resonate with you or you’d like to connect, feel free to send me a message on LinkedIn.&lt;/p&gt;
+        <guid>https://example.com/about/</guid>
+        <description>&lt;p&gt;I’m a technical writer with several years of experience creating developer and end-user documentation for cloud infrastructure, database services, and enterprise management systems. Today, I focus on developer content for MaaS (Model-as-a-Service) and generative AI platforms.&lt;/p&gt;
+&lt;p&gt;What I enjoy most is getting hands-on with what I document—testing the product, exploring edge cases, and turning complex technology into clear, practical guidance people can actually use.&lt;/p&gt;
+&lt;p&gt;Lately, I’ve been diving deep into generative AI and large language models, fascinated by how they’re reshaping the way we work and live. I am also exploring how to leverage AI capabilities to build practical tools and software.&lt;/p&gt;
+&lt;p&gt;On this blog, I’ll share lessons from my technical writing career, hands-on experiments with new technologies, and reflections on continuous learning and professional growth.&lt;/p&gt;
+&lt;p&gt;If any of this resonates with you—or you’d like to connect—feel free to message me on LinkedIn.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Archives</title>
-        <link>http://localhost:1313/archives/</link>
+        <link>https://example.com/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/archives/</guid>
+        <guid>https://example.com/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://example.com/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://example.com/search/</guid>
         <description></description>
         </item>
         

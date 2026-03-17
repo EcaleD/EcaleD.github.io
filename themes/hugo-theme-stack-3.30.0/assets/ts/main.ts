@@ -91,7 +91,21 @@ let Stack = {
             });
         });
 
-        new StackColorScheme(document.getElementById('dark-mode-toggle'));
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+            const toggleTextEl = darkModeToggle.querySelector('span');
+            const setToggleText = (scheme: string) => {
+                if (!toggleTextEl) return;
+                toggleTextEl.textContent = scheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+            };
+
+            window.addEventListener('onColorSchemeChange', (e) => {
+                setToggleText((e as CustomEvent).detail);
+            });
+
+            setToggleText(document.documentElement.dataset.scheme);
+            new StackColorScheme(darkModeToggle);
+        }
     }
 }
 
