@@ -92,7 +92,7 @@ You can check the prompt here: [prompt.md](https://drive.google.com/file/d/1A6QR
 
 GPT helped me move from “what I want” to “what an AI builder can execute more reliably.”
 
-## Step 3: Let the coding agent build
+## Let the coding agent build
 
 After that, I passed the PRD prompt to TRAE, and it generated some design documents first, including the architecture diagram, the API spec, and the UI design.
 
