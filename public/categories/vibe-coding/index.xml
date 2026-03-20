@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Vibe Coding on Xiaokai&#39;s Blog</title>
+        <link>http://localhost:1313/categories/vibe-coding/</link>
+        <description>Recent content in Vibe Coding on Xiaokai&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Xiaokai Dong</copyright>
+        <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/vibe-coding/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Using AI to build a customized translation service</title>
+        <link>http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/</link>
+        <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/</guid>
+        <description>&lt;img src="http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/header-image-shooting-star.png" alt="Featured image of post Using AI to build a customized translation service" /&gt;&lt;p&gt;Part of my day-to-day work is translating and localizing Chinese technical content into English. Along the way, content also needs to be adapted for different external and internal publishing channels. For a long time, that work lived in a more traditional internationalization (i18n) workflow, and over time it became a pain point for both writers and translators.&lt;/p&gt;
+&lt;p&gt;As our documentation workflow moved toward a doc-as-code and highly automated model, it became clear that the old translation approach no longer fit the way we worked.&lt;/p&gt;
+&lt;p&gt;What I needed was something that could plug into the new workflow more naturally—no heavy platform or separate manual process, just a service that could work well with Markdown-based files, support future automation, and save translators from repetitive formatting cleanup.&lt;/p&gt;
+&lt;p&gt;So I built one with AI.&lt;/p&gt;
+&lt;p&gt;This post is a simple write-up of how I approached it, what worked well, what needed debugging, and what I would handle more carefully next time.&lt;/p&gt;
+&lt;h2 id=&#34;why-i-wanted-to-build-it&#34;&gt;Why I wanted to build it
+&lt;/h2&gt;&lt;p&gt;The main problem was not translation quality alone. It was workflow fit.&lt;/p&gt;
+&lt;p&gt;Our docs were moving toward a doc-as-code setup, which meant content was increasingly managed like source code: Markdown files, versioning, iterative updates, and developer-style tooling. In that setup, translation also needed to become more structured.&lt;/p&gt;
+&lt;p&gt;I wanted a service that could do a few practical things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;translate Markdown into English&lt;/li&gt;
+&lt;li&gt;preserve formatting as much as possible&lt;/li&gt;
+&lt;li&gt;support incremental translation instead of retranslating everything every time&lt;/li&gt;
+&lt;li&gt;expose both an API and a simple web UI, so it can be integrated easily into the pipeline while also supporting quick ad hoc tasks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup
+&lt;/h2&gt;&lt;p&gt;The setup was pretty simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a LLM model service&lt;/li&gt;
+&lt;li&gt;a coding agent, in my case &lt;a class=&#34;link&#34; href=&#34;https://www.trae.ai/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Trae&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;a virtual machine, either on company cloud or public cloud. Tools like Trae can connect to the machine and build the service there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The idea was not to hand-code everything myself from scratch, but to define the problem clearly enough that AI could generate most of the implementation, while I focused on reviewing, debugging, and refining it.&lt;/p&gt;
+&lt;p&gt;That worked better than I expected.&lt;/p&gt;
+&lt;h2 id=&#34;define-the-core-functions&#34;&gt;Define the core functions
+&lt;/h2&gt;&lt;p&gt;Before asking AI to write anything, I wrote down the core functions I wanted, mostly from an end-user perspective.&lt;/p&gt;
+&lt;p&gt;The most important ones were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Markdown translation&lt;/li&gt;
+&lt;li&gt;format preserving&lt;/li&gt;
+&lt;li&gt;incremental translation support&lt;/li&gt;
+&lt;li&gt;API&lt;/li&gt;
+&lt;li&gt;web UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once the functions were clear, the rest became much easier. Without that clarity, AI tends to produce something that looks complete at first glance but misses the details that actually matter in real use.&lt;/p&gt;
+&lt;p&gt;For example, “translate Markdown” sounds simple, but in practice it means much more than just translating text. You need to think about what should not be touched, how formatting is preserved, how files are handled, and how the translated result can still fit into your content workflow.&lt;/p&gt;
+&lt;p&gt;That kind of thinking is still very much human work.&lt;/p&gt;
+&lt;p&gt;One thing I learned afterward is that it helps a lot to define the logic of customized features early. In this case, that meant incremental translation. At first, the customized logic was not clearly defined, so AI used a more traditional translation memory mechanism, which did not fit the requirement. I then worked through a specific logic that suited my scenario and asked AI to rebuild the service around it.&lt;/p&gt;
+&lt;h2 id=&#34;turn-functional-requirements-into-a-prd&#34;&gt;Turn functional requirements into a PRD
+&lt;/h2&gt;&lt;p&gt;The original functional spec was simple. It described what I needed in plain English.&lt;/p&gt;
+&lt;p&gt;To turn that into a more standard product requirement document (PRD) that a developer could execute, I sent it to GPT and asked the model to rewrite it into a more detailed prompt.&lt;/p&gt;
+&lt;p&gt;The rewritten prompt was much more structured. It spelled out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the expected features&lt;/li&gt;
+&lt;li&gt;the input and output behavior&lt;/li&gt;
+&lt;li&gt;the architecture expectations&lt;/li&gt;
+&lt;li&gt;the constraints around formatting&lt;/li&gt;
+&lt;li&gt;the basic interaction model for the API and UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The original version looked good but was too long, so I asked the model to simplify it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/translation_service_prd.md&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PRD&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;GPT helped me move from “what I want” to “what an AI builder can execute more reliably.”&lt;/p&gt;
+&lt;h2 id=&#34;step-3-let-the-coding-agent-build&#34;&gt;Step 3: Let the coding agent build
+&lt;/h2&gt;&lt;p&gt;After that, I passed the PRD prompt to TRAE, and it generated some design documents first, including the architecture diagram, the API spec, and the UI design.&lt;/p&gt;
+&lt;p&gt;Below is the architecture diagram:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture.jpeg&#34;
+	width=&#34;3223&#34;
+	height=&#34;828&#34;
+	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_c38dd285537272ca.jpeg 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_b3b87f716bd7e773.jpeg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Architecture Diagram&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;389&#34;
+		data-flex-basis=&#34;934px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Next, the actual building work began, and around 20 minutes later, it delivered a usable version.&lt;/p&gt;
+&lt;p&gt;Instead of spending a long time wiring together the first usable version by hand, I already had something functional to test.&lt;/p&gt;
+&lt;p&gt;It was not perfect, but it was close enough that the remaining work became much more about refinement than initial construction.&lt;/p&gt;
+&lt;p&gt;That is one of the most useful things AI can do in this kind of project: it can get you to the first 60% or even 80% much faster, especially when the product shape is already clear.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui.jpeg&#34;
+	width=&#34;948&#34;
+	height=&#34;824&#34;
+	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui_hu_fba6d431f6329fd6.jpeg 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui_hu_67b3cfc01d92c0c1.jpeg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;UI&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;115&#34;
+		data-flex-basis=&#34;276px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;debugging-and-refining&#34;&gt;Debugging and refining
+&lt;/h2&gt;&lt;p&gt;Next came the real work: bug fixing and refinement. This still required a lot of human judgment.&lt;/p&gt;
+&lt;p&gt;Although the UI already looked good, a number of functional details needed to be corrected and improved.&lt;/p&gt;
+&lt;p&gt;I had to go through rounds of:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;debugging&lt;/li&gt;
+&lt;li&gt;refining logic&lt;/li&gt;
+&lt;li&gt;updating behavior&lt;/li&gt;
+&lt;li&gt;checking whether the implementation matched the actual workflow needs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This was especially important for architecture and logic.&lt;/p&gt;
+&lt;p&gt;AI can generate a lot of code quickly, but if you do not review the structure carefully, future debugging becomes painful. It is easy to end up with something that works once but is hard to extend.&lt;/p&gt;
+&lt;p&gt;So I spent time understanding what the AI wrote:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;how requests flowed through the service&lt;/li&gt;
+&lt;li&gt;how translation logic was organized&lt;/li&gt;
+&lt;li&gt;where format handling happened&lt;/li&gt;
+&lt;li&gt;how future changes could be added without breaking everything&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That review step made later improvements much easier.&lt;/p&gt;
+&lt;p&gt;Another important aspect was testing. I asked AI to write test cases for each fix it made so I could use them later for regression testing. It also set up a debugging server that could output logs in real time.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test.png&#34;
+	width=&#34;1209&#34;
+	height=&#34;177&#34;
+	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test_hu_e51c8894c16d1b3b.png 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test_hu_c2d2d924a2f3c6da.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Test&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;683&#34;
+		data-flex-basis=&#34;1639px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;integrate-the-service-into-the-workflow&#34;&gt;Integrate the service into the workflow
+&lt;/h2&gt;&lt;p&gt;Once the service itself was in a decent state, I took one more step: I turned the API usage into a skill that could be used inside the IDE.&lt;/p&gt;
+&lt;p&gt;This made the service much more practical in daily work.&lt;/p&gt;
+&lt;p&gt;Instead of treating it as a standalone side tool, it became something closer to a workflow capability. That is usually the point where a tool starts to become genuinely useful—when it stops being “a project I built” and starts becoming “something I can actually use repeatedly with low friction.”&lt;/p&gt;
+&lt;h2 id=&#34;lessons-learned&#34;&gt;Lessons learned
+&lt;/h2&gt;&lt;p&gt;A few lessons stood out pretty clearly.&lt;/p&gt;
+&lt;h3 id=&#34;1-plan-the-functions-carefully-before-asking-ai-to-build&#34;&gt;1. Plan the functions carefully before asking AI to build
+&lt;/h3&gt;&lt;p&gt;This was the biggest one.&lt;/p&gt;
+&lt;p&gt;If the functional design is vague, AI will still generate something, but it will often fill in important gaps with assumptions that may not match what you want.&lt;/p&gt;
+&lt;p&gt;For this kind of tool, I found it much more effective to spend more time on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;what the service should do&lt;/li&gt;
+&lt;li&gt;what the boundaries are&lt;/li&gt;
+&lt;li&gt;what inputs and outputs should look like&lt;/li&gt;
+&lt;li&gt;what future workflow it should fit into&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Interestingly, I worried less about implementation details at the beginning. AI was actually pretty helpful there. The harder part was defining the problem correctly.&lt;/p&gt;
+&lt;h3 id=&#34;2-read-the-architecture-not-just-the-feature-list&#34;&gt;2. Read the architecture, not just the feature list
+&lt;/h3&gt;&lt;p&gt;If the generated tool seems to work, it is tempting to move on immediately.&lt;/p&gt;
+&lt;p&gt;But I think it is worth slowing down and checking the architecture and logic written by AI. That pays off later when you need to debug or add features.&lt;/p&gt;
+&lt;p&gt;In my case, reviewing the code structure made it easier to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fix issues faster&lt;/li&gt;
+&lt;li&gt;understand where certain behavior came from&lt;/li&gt;
+&lt;li&gt;prepare the service for later updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It also reduced the feeling of losing control over the system.&lt;/p&gt;
+&lt;h3 id=&#34;3-ai-can-do-more-than-expected&#34;&gt;3. AI can do more than expected
+&lt;/h3&gt;&lt;p&gt;It is worth thinking broadly about what AI can help with, because it can support almost every stage of the work. No ideas yet? No deep knowledge of architecture, coding, interfaces, or pipelines? AI can still help move things forward.&lt;/p&gt;
+&lt;p&gt;A good place to start is simply asking for ideas or possible solutions first.&lt;/p&gt;
+&lt;p&gt;And when problems come up—even problems created by AI—you can still turn to AI, or another model, for help.&lt;/p&gt;
+&lt;p&gt;It is easy to stay on the existing path, even when that path is obviously inefficient. AI makes it much easier to challenge that habit and build a better one.&lt;/p&gt;
+&lt;h3 id=&#34;4-ai-is-very-good-at-acceleration-but-not-at-ownership&#34;&gt;4. AI is very good at acceleration, but not at ownership
+&lt;/h3&gt;&lt;p&gt;This project reminded me that AI can help a lot with building, but it does not remove the need for someone to own the result.&lt;/p&gt;
+&lt;p&gt;It can generate code, but it does not automatically understand my workflow as well as I do.&lt;/p&gt;
+&lt;p&gt;It does not know which tradeoffs matter most. It does not know what will become a maintenance problem later. And it does not know which rough edge is acceptable and which one will break real usage.&lt;/p&gt;
+&lt;p&gt;That part still belongs to the person building the service.&lt;/p&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next steps
+&lt;/h2&gt;&lt;p&gt;The next step is to add CI/CD so the service is easier to maintain over time. That feels like the natural continuation of the whole project.&lt;/p&gt;
+&lt;p&gt;Once a translation service becomes part of a doc-as-code workflow, it should also be maintained with a doc-as-code mindset: versioned, testable, and easier to update safely.&lt;/p&gt;
+&lt;p&gt;So while the first phase was about building the service, the next phase is really about making it easier to keep alive.&lt;/p&gt;
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final thoughts
+&lt;/h2&gt;&lt;p&gt;This project was a good reminder that AI is especially useful when the problem is already well understood.&lt;/p&gt;
+&lt;p&gt;I did not start with “let’s see what AI can build.” I started with a real workflow problem, a fairly clear set of requirements, and a practical need inside documentation work.&lt;/p&gt;
+&lt;p&gt;From there, AI helped me move much faster.&lt;/p&gt;
+&lt;p&gt;The most useful pattern for me was:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Be a PM to define the problem clearly and use AI to turn rough requirements into a better build prompt&lt;/li&gt;
+&lt;li&gt;Let the agent act like both architect and developer to design the technical spec and implement it&lt;/li&gt;
+&lt;li&gt;Be a QA lead to drive the debugging and refinement until it fits real use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you work in documentation, localization, or internal tooling, this kind of approach is definitely worth trying.&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

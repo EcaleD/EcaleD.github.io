@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Learn on Xiaokai&#39;s Blog</title>
-        <link>https://example.com/categories/learn/</link>
+        <link>http://localhost:1313/categories/learn/</link>
         <description>Recent content in Learn on Xiaokai&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Xiaokai Dong</copyright>
-        <lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/learn/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/learn/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Learn Unity basics by making a fun little game</title>
-        <link>https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/</link>
+        <link>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</link>
         <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/</guid>
-        <description>&lt;img src="https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn Unity basics by making a fun little game" /&gt;&lt;p&gt;I spent a few days to learn Unity basics last year. This helpful video series by Code Monkey really helped a lot!&lt;/p&gt;
+        <guid>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</guid>
+        <description>&lt;img src="http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn Unity basics by making a fun little game" /&gt;&lt;p&gt;I spent a few days to learn Unity basics last year. This helpful video series by Code Monkey really helped a lot!&lt;/p&gt;
 &lt;p&gt;This is the game that I finally made:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/game_demo.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo.gif&#34;
 	width=&#34;1272&#34;
 	height=&#34;726&#34;
-	srcset=&#34;https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_27b2653b435c06d3.gif 480w, https://example.com/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_8e499c64c49e9bcc.gif 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_27b2653b435c06d3.gif 480w, http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_8e499c64c49e9bcc.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Game demo&#34;

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="You are a senior full-stack coding agent. Build a internet accessible HTTPS translation service on mainstream Linux OS that translates Simplified Chinese Markdown → English using ModelArk&rsquo;s LLM service. The service must support BOTH a browser UI and an HTTP API for scripts/services.\n============================================================ 0) Environment / Non-functional OS: Linux, Python 3 available. Network: Service can be accessed via internet. Use ASGI (uvicorn) for concurrency. Secrets: User need to provide their own LLM secrets, base url and other info, for example API_KEY (required) BASE_URL (required) MODEL_ID (default) TIMEOUT_SECONDS (default 180) Keep dependencies minimal: for example, FastAPI + Uvicorn + simple HTML (Jinja2/static) + minimal JS. Storage must be lightweight. You MUST implement a server-side “source version repository” for Chinese files (filesystem or SQLite). Also design the storage module so it can be extended later to store translation memory (zh→en mapping), but DO NOT implement TM now. ============================================================\n">
 <title></title>
 
 <link rel='canonical' href='http://localhost:1313/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="">
-<meta property='og:description' content="">
+<meta property='og:description' content="You are a senior full-stack coding agent. Build a internet accessible HTTPS translation service on mainstream Linux OS that translates Simplified Chinese Markdown → English using ModelArk&rsquo;s LLM service. The service must support BOTH a browser UI and an HTTP API for scripts/services.\n============================================================ 0) Environment / Non-functional OS: Linux, Python 3 available. Network: Service can be accessed via internet. Use ASGI (uvicorn) for concurrency. Secrets: User need to provide their own LLM secrets, base url and other info, for example API_KEY (required) BASE_URL (required) MODEL_ID (default) TIMEOUT_SECONDS (default 180) Keep dependencies minimal: for example, FastAPI + Uvicorn + simple HTML (Jinja2/static) + minimal JS. Storage must be lightweight. You MUST implement a server-side “source version repository” for Chinese files (filesystem or SQLite). Also design the storage module so it can be extended later to store translation memory (zh→en mapping), but DO NOT implement TM now. ============================================================\n">
 <meta property='og:url' content='http://localhost:1313/p/'>
 <meta property='og:site_name' content='Xiaokai&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="You are a senior full-stack coding agent. Build a internet accessible HTTPS translation service on mainstream Linux OS that translates Simplified Chinese Markdown → English using ModelArk&rsquo;s LLM service. The service must support BOTH a browser UI and an HTTP API for scripts/services.\n============================================================ 0) Environment / Non-functional OS: Linux, Python 3 available. Network: Service can be accessed via internet. Use ASGI (uvicorn) for concurrency. Secrets: User need to provide their own LLM secrets, base url and other info, for example API_KEY (required) BASE_URL (required) MODEL_ID (default) TIMEOUT_SECONDS (default 180) Keep dependencies minimal: for example, FastAPI + Uvicorn + simple HTML (Jinja2/static) + minimal JS. Storage must be lightweight. You MUST implement a server-side “source version repository” for Chinese files (filesystem or SQLite). Also design the storage module so it can be extended later to store translation memory (zh→en mapping), but DO NOT implement TM now. ============================================================\n">
     <link rel="shortcut icon" href="/home.png" />
 
     </head>
@@ -23,7 +23,7 @@
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "dark");
+                localStorage.setItem(colorSchemeKey, "light");
             }
         })();
     </script><script>
@@ -240,7 +240,7 @@
 
 
                 <time class="article-time--reading">
-                    0 minute read
+                    5 minute read
                 </time>
             </div>
         
@@ -255,7 +255,197 @@
     <section class="article-content">
     
     
-    
+    <p>You are a senior full-stack coding agent. Build a internet accessible HTTPS translation service on mainstream Linux OS that translates Simplified Chinese Markdown → English using ModelArk&rsquo;s LLM service. The service must support BOTH a browser UI and an HTTP API for scripts/services.</p>
+<h1 id="0-environment--non-functional">============================================================
+0) Environment / Non-functional
+</h1><ul>
+<li>OS: Linux, Python 3 available.</li>
+<li>Network:
+<ul>
+<li>Service can be accessed via internet.</li>
+<li>Use ASGI (uvicorn) for concurrency.</li>
+</ul>
+</li>
+<li>Secrets: User need to provide their own LLM secrets, base url and other info, for example
+<ul>
+<li>API_KEY (required)</li>
+<li>BASE_URL (required)</li>
+<li>MODEL_ID (default)</li>
+<li>TIMEOUT_SECONDS (default 180)</li>
+</ul>
+</li>
+<li>Keep dependencies minimal: for example, FastAPI + Uvicorn + simple HTML (Jinja2/static) + minimal JS.</li>
+<li>Storage must be lightweight. You MUST implement a server-side “source version repository” for Chinese files (filesystem or SQLite). Also design the storage module so it can be extended later to store translation memory (zh→en mapping), but DO NOT implement TM now.</li>
+</ul>
+<p>============================================================</p>
+<ol>
+<li>Required Features
+============================================================</li>
+</ol>
+<p>A) Full translation</p>
+<ul>
+<li>Input: upload a Chinese .md file OR paste Chinese Markdown text.</li>
+<li>Output: English Markdown file (downloadable).</li>
+<li>MUST preserve Markdown structure and MUST NOT translate/alter:
+<ul>
+<li>fenced code blocks <code>...</code> (including language tag like ```python)</li>
+<li>inline code <code>...</code></li>
+<li>URLs and link targets: <a class="link" href="URL" >text</a> where URL stays identical</li>
+<li>file paths</li>
+</ul>
+</li>
+<li>Headings/lists/tables/links/images must keep their formatting; only natural-language text is translated.</li>
+</ul>
+<p>B) Incremental translation</p>
+<ul>
+<li>The server maintains a repository of Chinese source files keyed by a user-provided repository_path.</li>
+<li>Full translation mode: after translation, store the input Chinese file into the repo at repository_path.</li>
+<li>Incremental mode:
+<ol>
+<li>Load previous Chinese file from repo by repository_path.</li>
+<li>Compare previous vs current Chinese file (line-by-line diff is OK; normalize trailing spaces if desired).</li>
+<li>Translate ONLY the changed lines (no TM reuse required).</li>
+</ol>
+<ul>
+<li>For code block changes, find them out but do not translate them, return the updated code blocks in the output.</li>
+</ul>
+<ol start="4">
+<li>Output ONLY the changed lines as zh/en pairs (e.g., JSON array [{zh, en}, &hellip;] or a small table; choose one and document it).</li>
+<li>Replace the stored repo file with the new Chinese file.</li>
+</ol>
+</li>
+<li>If no previous version exists for repository_path, return an error telling the user/client to run full translation first.</li>
+</ul>
+<p>C) Markdown Preprocessing</p>
+<ul>
+<li>Before sending the content for translation, replace all the code blocks and html tags with placeholder, such as <attribute id=xxx>; You design an effective way</li>
+<li>Ensure the placeholders will not affect model&rsquo;s translation</li>
+<li>Ensure original code blocks, html tags can be safely add back to the translated content.</li>
+</ul>
+<p>C) Chunked translation</p>
+<ul>
+<li>Preprocess and translate in chunks to fit context limits.</li>
+<li>User specifies the chunk number, from 1-20; this number indicates how many chunks the contente will be divided</li>
+<li>For each translation tasks, send one chunk to the model to translate in one request; e.g., 8 chunks will send 8 requests to model.</li>
+<li>Translate chunks sequentially and concatenate in order.</li>
+</ul>
+<p>D) Glossary — FULL LIST TO MODEL EACH REQUEST</p>
+<ul>
+<li>Optional glossary CSV: source_term,target_term (Chinese → required English).</li>
+<li>For EVERY translation request (full or incremental, each chunk or each changed-line call), pass the ENTIRE glossary list into the system prompt.</li>
+<li>Instruct the model: “Translate these terms exactly as specified; do not deviate.”</li>
+<li>Do NOT pre-replace terms in the source text.</li>
+<li>Optionally add a post-check to detect glossary violations and warn/error, but do not auto-rewrite terms.</li>
+</ul>
+<h1 id="2-modelark-integration">============================================================
+2) ModelArk Integration
+</h1><ul>
+<li>Implement a ModelArk client module that:
+<ul>
+<li>Builds requests to the ModelArk Responses API using env config.</li>
+<li>Use the OpenAI compatible API (Python SDK) so later can configure to use models provided by other providers.</li>
+<li>Uses a strong system prompt enforcing: zh→en, preserve Markdown, skip code/inline/URLs/paths, and obey glossary exactly.</li>
+<li>Implements retries (exponential backoff) for transient errors (429/5xx) and clear error messages.</li>
+<li>Supports chunking (send chunks in order; combine outputs).</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-interfaces">============================================================
+3) Interfaces
+</h1><p>3.1 Web UI (GET /)
+Single page with:</p>
+<ul>
+<li>markdown input: file upload (.md) + textarea (either one).</li>
+<li>repository_path input (required; used for saving/loading the Chinese file in repo).</li>
+<li>Checkbox “Incremental mode”.</li>
+<li>Glossary CSV upload (optional).</li>
+<li>Translate button + loading indicator.</li>
+<li>Output:
+<ul>
+<li>Full mode: download translated English .md (and optional preview).</li>
+<li>Incremental mode: show changed-line zh/en pairs and allow download (json/csv/md).</li>
+</ul>
+</li>
+<li>when refreshing, translation ongoing tasks should remain</li>
+</ul>
+<p>3.2 API</p>
+<ul>
+<li>
+<p>POST /api/translate (multipart/form-data preferred; JSON allowed for text-only clients)
+Inputs:</p>
+<ul>
+<li>updated_file OR updated_text</li>
+<li>repository_path (required)</li>
+<li>incremental (bool, default false)</li>
+<li>glossary_csv (optional)</li>
+<li>chunk_lines (int, default 3; allowed 1–5)
+Outputs:</li>
+<li>Full mode: return English Markdown as file attachment
+<ul>
+<li>Content-Type: text/markdown; charset=utf-8</li>
+<li>Content-Disposition: attachment; filename=&quot;<name>.md&quot;</li>
+</ul>
+</li>
+<li>Incremental mode: return JSON array of {zh, en} (or your chosen format) containing only changed lines.
+Errors:</li>
+<li>400 missing/invalid inputs</li>
+<li>404 incremental requested but repo file missing</li>
+<li>502 upstream ModelArk error</li>
+<li>500 unexpected error</li>
+</ul>
+</li>
+<li>
+<p>GET /healthz -&gt; {&ldquo;status&rdquo;:&ldquo;ok&rdquo;}</p>
+</li>
+</ul>
+<p><strong>Note</strong> Return clear status of the translation task both on the UI and via API, especially design error messages that can indicate informatively.</p>
+<p>(Optional) POST /api/preview -&gt; JSON output for quick preview.</p>
+<h1 id="4-markdown-safety-preprocessing">============================================================
+4) Markdown safety preprocessing
+</h1><ul>
+<li>Before translation, protect:
+<ul>
+<li>fenced code blocks and inline code (placeholders + restore)</li>
+<li>link targets / bare URLs (URL must remain unchanged; placeholders + restore)</li>
+</ul>
+</li>
+<li>during preprocessing, replace codeblocks and html markups with placeholders</li>
+<li>Do NOT do any placeholder replacement for glossary terms.</li>
+<li>After translation, restore placeholders and validate:
+<ul>
+<li>code fence balance unchanged</li>
+<li>no unreplaced placeholders remain</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-version-repository-server-side">============================================================
+5) Version repository (server-side)
+</h1><ul>
+<li>Implement save/load/replace by repository_path.</li>
+<li>Store under a dedicated data directory; sanitize repository_path to avoid traversal (reject .., absolute paths, etc).</li>
+<li>Keep repository module abstract so it can later be extended to store translation memory (lightweight DB).</li>
+</ul>
+<h1 id="6-debug-system">============================================================
+6) Debug system
+</h1><ul>
+<li>Implement a debug system that can clearly check the log of each request</li>
+</ul>
+<h1 id="7-deliverables">============================================================
+7) Deliverables
+</h1><p>Provide a working repo with:</p>
+<ul>
+<li>FastAPI app + HTML UI</li>
+<li>ModelArk client</li>
+<li>Markdown protection utilities</li>
+<li>Glossary CSV parser + “glossary-to-system-prompt” builder</li>
+<li>Version repository module</li>
+<li>Diff logic for incremental mode</li>
+<li>README: setup, env vars, run command (uvicorn &ndash;host 0.0.0.0 &ndash;port $PORT), LAN access, curl examples</li>
+<li>examples/ sample md + glossary</li>
+<li>basic tests or a manual test script
+Implement it.</li>
+</ul>
+
 </section>
 
 
@@ -320,7 +510,9 @@
     <section class="copyright">
         &copy; 
         
-        2025 Xiaokai Dong
+            2025 - 
+        
+        2026 Xiaokai Dong
     </section>
     
     <section class="powerby">
@@ -414,7 +606,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.33592c1d3646904e9e6e474e18ab1199355c4779d67d53fad77663ca90cb5774.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.134166522c949cdb9e0fc9602db532f49cdc8b779da89bb4d8e7f8cbabebc3c0.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
