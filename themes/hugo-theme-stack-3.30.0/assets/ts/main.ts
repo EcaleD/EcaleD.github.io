@@ -96,7 +96,7 @@ let Stack = {
             const toggleTextEl = darkModeToggle.querySelector('span');
             const setToggleText = (scheme: string) => {
                 if (!toggleTextEl) return;
-                toggleTextEl.textContent = scheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+                toggleTextEl.textContent = scheme === 'dark' ? 'Light' : 'Dark';
             };
 
             window.addEventListener('onColorSchemeChange', (e) => {

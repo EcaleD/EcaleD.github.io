@@ -8,14 +8,14 @@ tags = [
     "Game",
 ]
 categories = [
-    "Learn",
+    "Learning",
 ]
 image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 +++
 
 <!--more-->
 
-I spent a few days to learn Unity basics last year. This helpful video series by Code Monkey really helped a lot!
+I spent a few days to learn Unity basics last year. This helpful video series really helped a lot!
 
 This is the game that I finally made:
 

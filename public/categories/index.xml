@@ -21,15 +21,15 @@
         <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/vibe-coding/</guid>
-        <description></description>
+        <description>&lt;img src="http://localhost:1313/categories/vibe-coding/vibe_coding.png" alt="Featured image of post Vibe Coding" /&gt;</description>
         </item>
         <item>
-        <title>Learn</title>
-        <link>http://localhost:1313/categories/learn/</link>
+        <title>Learning</title>
+        <link>http://localhost:1313/categories/learning/</link>
         <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/categories/learn/</guid>
-        <description></description>
+        <guid>http://localhost:1313/categories/learning/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/learning/learning.png" alt="Featured image of post Learning" /&gt;</description>
         </item>
         
     </channel>

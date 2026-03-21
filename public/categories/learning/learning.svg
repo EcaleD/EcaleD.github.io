@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Learning">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="64" x2="416" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#d946ef"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="256" cy="256" r="224"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+  </g>
+  <circle cx="256" cy="256" r="224" fill="none"/>
+  <circle cx="256" cy="196" r="52" fill="#000"/>
+  <path d="M128 304c0-35.346 28.654-64 64-64h128c35.346 0 64 28.654 64 64v12c0 17.673-14.327 32-32 32H160c-17.673 0-32-14.327-32-32v-12z" fill="#000"/>
+  <path d="M118 324c0-19.882 16.118-36 36-36h92c16.569 0 30 13.431 30 30v106c0 13.255-10.745 24-24 24h-98c-19.882 0-36-16.118-36-36V324z" fill="#000"/>
+  <path d="M302 318c0-16.569 13.431-30 30-30h92c19.882 0 36 16.118 36 36v88c0 19.882-16.118 36-36 36h-98c-13.255 0-24-10.745-24-24V318z" fill="#000"/>
+  <path d="M256 312c-10 0-18 8-18 18v114c0 10 8 18 18 18s18-8 18-18V330c0-10-8-18-18-18z" fill="#000"/>
+</svg>

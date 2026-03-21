@@ -1,8 +1,8 @@
 +++
 author = "Xiaokai Dong"
-title = "Using AI to build a customized translation service"
+title = "Use AI to build a customized translation service"
 date = "2026-02-18"
-description = "How I used AI to build a customized translation service for the technical documentation development workflow."
+description = "Vibe coding a customized translation service for that fits the real technical documentation development workflow."
 tags = [
     "Vibe Coding",
     "Tool",
@@ -88,7 +88,7 @@ The rewritten prompt was much more structured. It spelled out:
 
 The original version looked good but was too long, so I asked the model to simplify it.
 
-You can check the prompt here: [prompt.md](https://drive.google.com/file/d/1A6QRdk2E3WyYFYgXY4nYoufzrkO-Zd0g/view?usp=drive_link)
+You can check the prompt here: **[prompt.md](https://drive.google.com/file/d/1A6QRdk2E3WyYFYgXY4nYoufzrkO-Zd0g/view?usp=drive_link)**
 
 GPT helped me move from “what I want” to “what an AI builder can execute more reliably.”
 
@@ -148,7 +148,7 @@ That review step made later improvements much easier.
 
 Another important aspect was testing. I asked AI to write test cases for each fix it made so I could use them later for regression testing. It also set up a debugging server that could output logs in real time.
 
-![Test](translation_service_test.png)
+![Testing](translation_service_test.png)
 
 ## Integrate the service into the workflow
 
@@ -176,6 +176,10 @@ For this kind of tool, I found it much more effective to spend more time on:
 - what future workflow it should fit into
 
 Interestingly, I worried less about implementation details at the beginning. AI was actually pretty helpful there. The harder part was defining the problem correctly.
+
+BTW, when I optimized the PRD prompt and retried the building process, the AI created much more functional features than the first time in one go. It even generated a user-facing API docs following the OpenAPI documentation standard.
+
+![API Spec](api_spec.png)
 
 ### 2. Read the architecture, not just the feature list
 

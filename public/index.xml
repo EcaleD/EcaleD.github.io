@@ -8,12 +8,12 @@
         <language>en</language>
         <copyright>Xiaokai Dong</copyright>
         <lastBuildDate>Wed, 18 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Using AI to build a customized translation service</title>
-        <link>http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/</link>
+        <title>Use AI to build a customized translation service</title>
+        <link>http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/</link>
         <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/</guid>
-        <description>&lt;img src="http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/header-image-shooting-star.png" alt="Featured image of post Using AI to build a customized translation service" /&gt;&lt;p&gt;Part of my day-to-day work is translating and localizing Chinese technical content into English. Along the way, content also needs to be adapted for different external and internal publishing channels. For a long time, that work lived in a more traditional internationalization (i18n) workflow, and over time it became a pain point for both writers and translators.&lt;/p&gt;
+        <guid>http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/</guid>
+        <description>&lt;img src="http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star.png" alt="Featured image of post Use AI to build a customized translation service" /&gt;&lt;p&gt;Part of my day-to-day work is translating and localizing Chinese technical content into English. Along the way, content also needs to be adapted for different external and internal publishing channels. For a long time, that work lived in a more traditional internationalization (i18n) workflow, and over time it became a pain point for both writers and translators.&lt;/p&gt;
 &lt;p&gt;As our documentation workflow moved toward a doc-as-code and highly automated model, it became clear that the old translation approach no longer fit the way we worked.&lt;/p&gt;
 &lt;p&gt;What I needed was something that could plug into the new workflow more naturally—no heavy platform or separate manual process, just a service that could work well with Markdown-based files, support future automation, and save translators from repetitive formatting cleanup.&lt;/p&gt;
 &lt;p&gt;So I built one with AI.&lt;/p&gt;
@@ -64,16 +64,16 @@
 &lt;li&gt;the basic interaction model for the API and UI&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The original version looked good but was too long, so I asked the model to simplify it.&lt;/p&gt;
-&lt;p&gt;You can check the prompt here: &lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/file/d/1A6QRdk2E3WyYFYgXY4nYoufzrkO-Zd0g/view?usp=drive_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;prompt.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can check the prompt here: &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://drive.google.com/file/d/1A6QRdk2E3WyYFYgXY4nYoufzrkO-Zd0g/view?usp=drive_link&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;prompt.md&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;GPT helped me move from “what I want” to “what an AI builder can execute more reliably.”&lt;/p&gt;
-&lt;h2 id=&#34;step-3-let-the-coding-agent-build&#34;&gt;Step 3: Let the coding agent build
+&lt;h2 id=&#34;let-the-coding-agent-build&#34;&gt;Let the coding agent build
 &lt;/h2&gt;&lt;p&gt;After that, I passed the PRD prompt to TRAE, and it generated some design documents first, including the architecture diagram, the API spec, and the UI design.&lt;/p&gt;
 &lt;p&gt;Below is the architecture diagram:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture.jpeg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_architecture.jpeg&#34;
 	width=&#34;3223&#34;
 	height=&#34;828&#34;
-	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_c38dd285537272ca.jpeg 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_b3b87f716bd7e773.jpeg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_c38dd285537272ca.jpeg 480w, http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_b3b87f716bd7e773.jpeg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Architecture Diagram&#34;
@@ -88,10 +88,10 @@
 &lt;p&gt;Instead of spending a long time wiring together the first usable version by hand, I already had something functional to test.&lt;/p&gt;
 &lt;p&gt;It was not perfect, but it was close enough that the remaining work became much more about refinement than initial construction.&lt;/p&gt;
 &lt;p&gt;That is one of the most useful things AI can do in this kind of project: it can get you to the first 60% or even 80% much faster, especially when the product shape is already clear.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui.jpeg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_ui.jpeg&#34;
 	width=&#34;948&#34;
 	height=&#34;824&#34;
-	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui_hu_fba6d431f6329fd6.jpeg 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_ui_hu_67b3cfc01d92c0c1.jpeg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_ui_hu_fba6d431f6329fd6.jpeg 480w, http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_ui_hu_67b3cfc01d92c0c1.jpeg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;UI&#34;
@@ -143,13 +143,13 @@
 &lt;/ul&gt;
 &lt;p&gt;That review step made later improvements much easier.&lt;/p&gt;
 &lt;p&gt;Another important aspect was testing. I asked AI to write test cases for each fix it made so I could use them later for regression testing. It also set up a debugging server that could output logs in real time.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_test.png&#34;
 	width=&#34;1209&#34;
 	height=&#34;177&#34;
-	srcset=&#34;http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test_hu_e51c8894c16d1b3b.png 480w, http://localhost:1313/p/using-ai-to-build-a-customized-translation-service/translation_service_test_hu_c2d2d924a2f3c6da.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_test_hu_e51c8894c16d1b3b.png 480w, http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/translation_service_test_hu_c2d2d924a2f3c6da.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;Test&#34;
+		alt=&#34;Testing&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
@@ -174,6 +174,21 @@
 &lt;li&gt;what future workflow it should fit into&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Interestingly, I worried less about implementation details at the beginning. AI was actually pretty helpful there. The harder part was defining the problem correctly.&lt;/p&gt;
+&lt;p&gt;BTW, when I optimized the PRD prompt and retried the building process, the AI created much more functional features than the first time in one go. It even generated a user-facing API docs following the OpenAPI documentation standard.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/api_spec.png&#34;
+	width=&#34;1460&#34;
+	height=&#34;871&#34;
+	srcset=&#34;http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/api_spec_hu_ce616c73585cde6b.png 480w, http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/api_spec_hu_91759f0fa49c4394.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;API Spec&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;402px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-read-the-architecture-not-just-the-feature-list&#34;&gt;2. Read the architecture, not just the feature list
 &lt;/h3&gt;&lt;p&gt;If the generated tool seems to work, it is tempting to move on immediately.&lt;/p&gt;
 &lt;p&gt;But I think it is worth slowing down and checking the architecture and logic written by AI. That pays off later when you need to debug or add features.&lt;/p&gt;
@@ -216,7 +231,7 @@
         <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/</guid>
-        <description>&lt;img src="http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn Unity basics by making a fun little game" /&gt;&lt;p&gt;I spent a few days to learn Unity basics last year. This helpful video series by Code Monkey really helped a lot!&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn Unity basics by making a fun little game" /&gt;&lt;p&gt;I spent a few days to learn Unity basics last year. This helpful video series really helped a lot!&lt;/p&gt;
 &lt;p&gt;This is the game that I finally made:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo.gif&#34;
 	width=&#34;1272&#34;

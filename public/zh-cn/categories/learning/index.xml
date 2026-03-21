@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Learning on Xiaokai&#39;s Blog</title>
+        <link>http://localhost:1313/zh-cn/categories/learning/</link>
+        <description>Recent content in Learning on Xiaokai&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Xiaokai Dong</copyright>
+        <lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/categories/learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Unity 基础</title>
+        <link>http://localhost:1313/zh-cn/p/unity-%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/zh-cn/p/unity-%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;img src="http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Unity 基础" /&gt;&lt;p&gt;跟着下面的视频学了一下 Unity 基础知识，真的很有意思！&lt;/p&gt;
+&lt;p&gt;我做的 Flappy Bird 游戏：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo.gif&#34;
+	width=&#34;1272&#34;
+	height=&#34;726&#34;
+	srcset=&#34;http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_27b2653b435c06d3.gif 480w, http://localhost:1313/p/learn-unity-basics-by-making-a-fun-little-game/game_demo_hu_8e499c64c49e9bcc.gif 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Game demo&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;175&#34;
+		data-flex-basis=&#34;420px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;视频教程：&lt;/p&gt;
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/XtQMytORBmM&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

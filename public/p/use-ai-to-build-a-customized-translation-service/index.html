@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Vibe coding a customized translation service for that fits the real technical documentation development workflow.">
+<title>Use AI to build a customized translation service</title>
+
+<link rel='canonical' href='http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/'>
+
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Use AI to build a customized translation service">
+<meta property='og:description' content="Vibe coding a customized translation service for that fits the real technical documentation development workflow.">
+<meta property='og:url' content='http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/'>
+<meta property='og:site_name' content='Xiaokai&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Vibe Coding' /><meta property='article:tag' content='Tool' /><meta property='article:published_time' content='2026-02-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-02-18T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star.png' />
+<meta name="twitter:title" content="Use AI to build a customized translation service">
+<meta name="twitter:description" content="Vibe coding a customized translation service for that fits the real technical documentation development workflow."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star.png' />
+    <link rel="shortcut icon" href="/home.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "light");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_4233da62202358c1.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Xiaokai&#39;s Blog</a></h1>
+            <h2 class="site-description">Technical Writer</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/EcaleD/EcaleD.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/xiaokai-dong/'
+                        target="_blank"
+                        title="Linkedin"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>English</option>
+                                
+                                    <option value="http://localhost:1313/zh-cn/" >中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#why-i-wanted-to-build-it">Why I wanted to build it</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#define-the-core-functions">Define the core functions</a></li>
+    <li><a href="#turn-functional-requirements-into-a-prd">Turn functional requirements into a PRD</a></li>
+    <li><a href="#let-the-coding-agent-build">Let the coding agent build</a></li>
+    <li><a href="#debugging-and-refining">Debugging and refining</a></li>
+    <li><a href="#integrate-the-service-into-the-workflow">Integrate the service into the workflow</a></li>
+    <li><a href="#lessons-learned">Lessons learned</a>
+      <ol>
+        <li><a href="#1-plan-the-functions-carefully-before-asking-ai-to-build">1. Plan the functions carefully before asking AI to build</a></li>
+        <li><a href="#2-read-the-architecture-not-just-the-feature-list">2. Read the architecture, not just the feature list</a></li>
+        <li><a href="#3-ai-can-do-more-than-expected">3. AI can do more than expected</a></li>
+        <li><a href="#4-ai-is-very-good-at-acceleration-but-not-at-ownership">4. AI is very good at acceleration, but not at ownership</a></li>
+      </ol>
+    </li>
+    <li><a href="#next-steps">Next steps</a></li>
+    <li><a href="#final-thoughts">Final thoughts</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/use-ai-to-build-a-customized-translation-service/">
+                <img src="/p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star_hu_4a5f3503bcf703fd.png"
+                        srcset="/p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star_hu_4a5f3503bcf703fd.png 800w, /p/use-ai-to-build-a-customized-translation-service/header-image-shooting-star_hu_1000e0173c84cd74.png 1600w"
+                        width="800" 
+                        height="533" 
+                        loading="lazy"
+                        alt="Featured image of post Use AI to build a customized translation service" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/vibe-coding/" style="background-color: #8b5cf6; color: #fff;">
+                Vibe Coding
+            </a>
+        
+            <a href="/categories/doc-workflow/" style="background-color: #2a9d8f; color: #fff;">
+                Doc Workflow
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/use-ai-to-build-a-customized-translation-service/">Use AI to build a customized translation service</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Vibe coding a customized translation service for that fits the real technical documentation development workflow.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 18, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    9 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Part of my day-to-day work is translating and localizing Chinese technical content into English. Along the way, content also needs to be adapted for different external and internal publishing channels. For a long time, that work lived in a more traditional internationalization (i18n) workflow, and over time it became a pain point for both writers and translators.</p>
+<p>As our documentation workflow moved toward a doc-as-code and highly automated model, it became clear that the old translation approach no longer fit the way we worked.</p>
+<p>What I needed was something that could plug into the new workflow more naturally—no heavy platform or separate manual process, just a service that could work well with Markdown-based files, support future automation, and save translators from repetitive formatting cleanup.</p>
+<p>So I built one with AI.</p>
+<p>This post is a simple write-up of how I approached it, what worked well, what needed debugging, and what I would handle more carefully next time.</p>
+<h2 id="why-i-wanted-to-build-it">Why I wanted to build it
+</h2><p>The main problem was not translation quality alone. It was workflow fit.</p>
+<p>Our docs were moving toward a doc-as-code setup, which meant content was increasingly managed like source code: Markdown files, versioning, iterative updates, and developer-style tooling. In that setup, translation also needed to become more structured.</p>
+<p>I wanted a service that could do a few practical things:</p>
+<ul>
+<li>translate Markdown into English</li>
+<li>preserve formatting as much as possible</li>
+<li>support incremental translation instead of retranslating everything every time</li>
+<li>expose both an API and a simple web UI, so it can be integrated easily into the pipeline while also supporting quick ad hoc tasks</li>
+</ul>
+<h2 id="setup">Setup
+</h2><p>The setup was pretty simple:</p>
+<ul>
+<li>a LLM model service</li>
+<li>a coding agent, in my case <a class="link" href="https://www.trae.ai/"  target="_blank" rel="noopener"
+    >Trae</a></li>
+<li>a virtual machine, either on company cloud or public cloud. Tools like Trae can connect to the machine and build the service there</li>
+</ul>
+<p>The idea was not to hand-code everything myself from scratch, but to define the problem clearly enough that AI could generate most of the implementation, while I focused on reviewing, debugging, and refining it.</p>
+<p>That worked better than I expected.</p>
+<h2 id="define-the-core-functions">Define the core functions
+</h2><p>Before asking AI to write anything, I wrote down the core functions I wanted, mostly from an end-user perspective.</p>
+<p>The most important ones were:</p>
+<ul>
+<li>Markdown translation</li>
+<li>format preserving</li>
+<li>incremental translation support</li>
+<li>API</li>
+<li>web UI</li>
+</ul>
+<p>Once the functions were clear, the rest became much easier. Without that clarity, AI tends to produce something that looks complete at first glance but misses the details that actually matter in real use.</p>
+<p>For example, “translate Markdown” sounds simple, but in practice it means much more than just translating text. You need to think about what should not be touched, how formatting is preserved, how files are handled, and how the translated result can still fit into your content workflow.</p>
+<p>That kind of thinking is still very much human work.</p>
+<p>One thing I learned afterward is that it helps a lot to define the logic of customized features early. In this case, that meant incremental translation. At first, the customized logic was not clearly defined, so AI used a more traditional translation memory mechanism, which did not fit the requirement. I then worked through a specific logic that suited my scenario and asked AI to rebuild the service around it.</p>
+<h2 id="turn-functional-requirements-into-a-prd">Turn functional requirements into a PRD
+</h2><p>The original functional spec was simple. It described what I needed in plain English.</p>
+<p>To turn that into a more standard product requirement document (PRD) that a developer could execute, I sent it to GPT and asked the model to rewrite it into a more detailed prompt.</p>
+<p>The rewritten prompt was much more structured. It spelled out:</p>
+<ul>
+<li>the expected features</li>
+<li>the input and output behavior</li>
+<li>the architecture expectations</li>
+<li>the constraints around formatting</li>
+<li>the basic interaction model for the API and UI</li>
+</ul>
+<p>The original version looked good but was too long, so I asked the model to simplify it.</p>
+<p>You can check the prompt here: <strong><a class="link" href="https://drive.google.com/file/d/1A6QRdk2E3WyYFYgXY4nYoufzrkO-Zd0g/view?usp=drive_link"  target="_blank" rel="noopener"
+    >prompt.md</a></strong></p>
+<p>GPT helped me move from “what I want” to “what an AI builder can execute more reliably.”</p>
+<h2 id="let-the-coding-agent-build">Let the coding agent build
+</h2><p>After that, I passed the PRD prompt to TRAE, and it generated some design documents first, including the architecture diagram, the API spec, and the UI design.</p>
+<p>Below is the architecture diagram:</p>
+<p><img src="/p/use-ai-to-build-a-customized-translation-service/translation_service_architecture.jpeg"
+	width="3223"
+	height="828"
+	srcset="/p/use-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_c38dd285537272ca.jpeg 480w, /p/use-ai-to-build-a-customized-translation-service/translation_service_architecture_hu_b3b87f716bd7e773.jpeg 1024w"
+	loading="lazy"
+	
+		alt="Architecture Diagram"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="389"
+		data-flex-basis="934px"
+	
+></p>
+<p>Next, the actual building work began, and around 20 minutes later, it delivered a usable version.</p>
+<p>Instead of spending a long time wiring together the first usable version by hand, I already had something functional to test.</p>
+<p>It was not perfect, but it was close enough that the remaining work became much more about refinement than initial construction.</p>
+<p>That is one of the most useful things AI can do in this kind of project: it can get you to the first 60% or even 80% much faster, especially when the product shape is already clear.</p>
+<p><img src="/p/use-ai-to-build-a-customized-translation-service/translation_service_ui.jpeg"
+	width="948"
+	height="824"
+	srcset="/p/use-ai-to-build-a-customized-translation-service/translation_service_ui_hu_fba6d431f6329fd6.jpeg 480w, /p/use-ai-to-build-a-customized-translation-service/translation_service_ui_hu_67b3cfc01d92c0c1.jpeg 1024w"
+	loading="lazy"
+	
+		alt="UI"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="276px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -sS -X POST &#34;http://localhost:8080/api/translate&#34; \
+</span></span><span class="line"><span class="cl">-F repository_path=&#34;docs/test/overview_test.cn.md&#34; \
+</span></span><span class="line"><span class="cl">-F incremental=true \
+</span></span><span class="line"><span class="cl">-F output_format=md \
+</span></span><span class="line"><span class="cl">-F output_filename=&#34;test.changed.md&#34; \
+</span></span><span class="line"><span class="cl">-F updated_file=@overview_test.cn.md \
+</span></span><span class="line"><span class="cl">-o test.changed.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="debugging-and-refining">Debugging and refining
+</h2><p>Next came the real work: bug fixing and refinement. This still required a lot of human judgment.</p>
+<p>Although the UI already looked good, a number of functional details needed to be corrected and improved.</p>
+<p>I had to go through rounds of:</p>
+<ul>
+<li>debugging</li>
+<li>refining logic</li>
+<li>updating behavior</li>
+<li>checking whether the implementation matched the actual workflow needs</li>
+</ul>
+<p>This was especially important for architecture and logic.</p>
+<p>AI can generate a lot of code quickly, but if you do not review the structure carefully, future debugging becomes painful. It is easy to end up with something that works once but is hard to extend.</p>
+<p>So I spent time understanding what the AI wrote:</p>
+<ul>
+<li>how requests flowed through the service</li>
+<li>how translation logic was organized</li>
+<li>where format handling happened</li>
+<li>how future changes could be added without breaking everything</li>
+</ul>
+<p>That review step made later improvements much easier.</p>
+<p>Another important aspect was testing. I asked AI to write test cases for each fix it made so I could use them later for regression testing. It also set up a debugging server that could output logs in real time.</p>
+<p><img src="/p/use-ai-to-build-a-customized-translation-service/translation_service_test.png"
+	width="1209"
+	height="177"
+	srcset="/p/use-ai-to-build-a-customized-translation-service/translation_service_test_hu_e51c8894c16d1b3b.png 480w, /p/use-ai-to-build-a-customized-translation-service/translation_service_test_hu_c2d2d924a2f3c6da.png 1024w"
+	loading="lazy"
+	
+		alt="Testing"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="683"
+		data-flex-basis="1639px"
+	
+></p>
+<h2 id="integrate-the-service-into-the-workflow">Integrate the service into the workflow
+</h2><p>Once the service itself was in a decent state, I took one more step: I turned the API usage into a skill that could be used inside the IDE.</p>
+<p>This made the service much more practical in daily work.</p>
+<p>Instead of treating it as a standalone side tool, it became something closer to a workflow capability. That is usually the point where a tool starts to become genuinely useful—when it stops being “a project I built” and starts becoming “something I can actually use repeatedly with low friction.”</p>
+<h2 id="lessons-learned">Lessons learned
+</h2><p>A few lessons stood out pretty clearly.</p>
+<h3 id="1-plan-the-functions-carefully-before-asking-ai-to-build">1. Plan the functions carefully before asking AI to build
+</h3><p>This was the biggest one.</p>
+<p>If the functional design is vague, AI will still generate something, but it will often fill in important gaps with assumptions that may not match what you want.</p>
+<p>For this kind of tool, I found it much more effective to spend more time on:</p>
+<ul>
+<li>what the service should do</li>
+<li>what the boundaries are</li>
+<li>what inputs and outputs should look like</li>
+<li>what future workflow it should fit into</li>
+</ul>
+<p>Interestingly, I worried less about implementation details at the beginning. AI was actually pretty helpful there. The harder part was defining the problem correctly.</p>
+<p>BTW, when I optimized the PRD prompt and retried the building process, the AI created much more functional features than the first time in one go. It even generated a user-facing API docs following the OpenAPI documentation standard.</p>
+<p><img src="/p/use-ai-to-build-a-customized-translation-service/api_spec.png"
+	width="1460"
+	height="871"
+	srcset="/p/use-ai-to-build-a-customized-translation-service/api_spec_hu_ce616c73585cde6b.png 480w, /p/use-ai-to-build-a-customized-translation-service/api_spec_hu_91759f0fa49c4394.png 1024w"
+	loading="lazy"
+	
+		alt="API Spec"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="167"
+		data-flex-basis="402px"
+	
+></p>
+<h3 id="2-read-the-architecture-not-just-the-feature-list">2. Read the architecture, not just the feature list
+</h3><p>If the generated tool seems to work, it is tempting to move on immediately.</p>
+<p>But I think it is worth slowing down and checking the architecture and logic written by AI. That pays off later when you need to debug or add features.</p>
+<p>In my case, reviewing the code structure made it easier to:</p>
+<ul>
+<li>fix issues faster</li>
+<li>understand where certain behavior came from</li>
+<li>prepare the service for later updates</li>
+</ul>
+<p>It also reduced the feeling of losing control over the system.</p>
+<h3 id="3-ai-can-do-more-than-expected">3. AI can do more than expected
+</h3><p>It is worth thinking broadly about what AI can help with, because it can support almost every stage of the work. No ideas yet? No deep knowledge of architecture, coding, interfaces, or pipelines? AI can still help move things forward.</p>
+<p>A good place to start is simply asking for ideas or possible solutions first.</p>
+<p>And when problems come up—even problems created by AI—you can still turn to AI, or another model, for help.</p>
+<p>It is easy to stay on the existing path, even when that path is obviously inefficient. AI makes it much easier to challenge that habit and build a better one.</p>
+<h3 id="4-ai-is-very-good-at-acceleration-but-not-at-ownership">4. AI is very good at acceleration, but not at ownership
+</h3><p>This project reminded me that AI can help a lot with building, but it does not remove the need for someone to own the result.</p>
+<p>It can generate code, but it does not automatically understand my workflow as well as I do.</p>
+<p>It does not know which tradeoffs matter most. It does not know what will become a maintenance problem later. And it does not know which rough edge is acceptable and which one will break real usage.</p>
+<p>That part still belongs to the person building the service.</p>
+<h2 id="next-steps">Next steps
+</h2><p>The next step is to add CI/CD so the service is easier to maintain over time. That feels like the natural continuation of the whole project.</p>
+<p>Once a translation service becomes part of a doc-as-code workflow, it should also be maintained with a doc-as-code mindset: versioned, testable, and easier to update safely.</p>
+<p>So while the first phase was about building the service, the next phase is really about making it easier to keep alive.</p>
+<h2 id="final-thoughts">Final thoughts
+</h2><p>This project was a good reminder that AI is especially useful when the problem is already well understood.</p>
+<p>I did not start with “let’s see what AI can build.” I started with a real workflow problem, a fairly clear set of requirements, and a practical need inside documentation work.</p>
+<p>From there, AI helped me move much faster.</p>
+<p>The most useful pattern for me was:</p>
+<ul>
+<li>Be a PM to define the problem clearly and use AI to turn rough requirements into a better build prompt</li>
+<li>Let the agent act like both architect and developer to design the technical spec and implement it</li>
+<li>Be a QA lead to drive the debugging and refinement until it fits real use</li>
+</ul>
+<p>If you work in documentation, localization, or internal tooling, this kind of approach is definitely worth trying.</p>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/vibe-coding/">Vibe Coding</a>
+        
+            <a href="/tags/tool/">Tool</a>
+        
+    </section>
+
+    <section class="article-share">
+    <span>Share:</span>
+    <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A1313%2Fp%2Fuse-ai-to-build-a-customized-translation-service%2F&text=Use&#43;AI&#43;to&#43;build&#43;a&#43;customized&#43;translation&#43;service" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+    </a>
+    <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A1313%2Fp%2Fuse-ai-to-build-a-customized-translation-service%2F" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%3A1313%2Fp%2Fuse-ai-to-build-a-customized-translation-service%2F" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="2" />
+  <line x1="8" y1="11" x2="8" y2="16" />
+  <line x1="8" y1="8" x2="8" y2="8.01" />
+  <line x1="12" y1="16" x2="12" y2="11" />
+  <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+</svg>
+    </a>
+</section>
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/automate-testing-in-the-technical-documentation-workflow/">
+        
+        
+            <div class="article-image">
+                <img src="/p/automate-testing-in-the-technical-documentation-workflow/header_image_by_gpt.bd476e9a6bc86eb8f2fb31c6fdd320b0_hu_f099d0e568a3c258.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Automate testing in the technical documentation workflow"
+                        
+                        data-hash="md5-vUdummvIbrjy&#43;zHG/dMgsA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Automate testing in the technical documentation workflow</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2025 - 
+        
+        2026 Xiaokai Dong
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.12ad272dacbb3e9c5cc96b99a7a4f69daa15a491e60117a18bc198ee844e5cf8.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -22,13 +22,13 @@ languages:
                 subtitle: Technical Writer
 
 # Comment out zh-cn
-#    zh-cn:
-#        languageName: 中文
-#        title: Xiaokai's Blog
-#        weight: 2
-#        params:
-#            sidebar:
-#                subtitle: Technical Writer
+    zh-cn:
+        languageName: 中文
+        title: Xiaokai's Blog
+        weight: 2
+        params:
+            sidebar:
+                subtitle: Technical Writer
 
 services:
     # Change it to your Disqus shortname before using
