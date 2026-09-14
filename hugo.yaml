@@ -39,7 +39,8 @@ services:
         id:
 
 pagination:
-    pagerSize: 3
+    # Keep blog and taxonomy listings on a single page.
+    pagerSize: 1000
 
 permalinks:
     post: /p/:slug/

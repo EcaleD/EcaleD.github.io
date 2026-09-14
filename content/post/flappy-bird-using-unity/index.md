@@ -2,7 +2,7 @@
 author = "Xiaokai Dong"
 title = "Learn Unity basics by making a fun little game"
 date = "2025-12-27"
-description = "Learn Unity basics by making a little game"
+description = "Learning Unity basics by following a video tutorial and building a small game."
 tags = [
     "Unity",
     "Game",
@@ -15,12 +15,14 @@ image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 
 <!--more-->
 
-I spent a few days to learn Unity basics last year. This helpful video series really helped a lot!
+Last year, I spent a few days learning the basic syntax and workflow of Unity. After going through the fundamentals, I followed the video tutorial below and built a small Flappy Bird-style game.
 
-This is the game that I finally made:
+The project was simple, but building it step by step gave me a practical way to apply what I had learned.
+
+Here is the version I made:
 
 ![Game demo](game_demo.gif)
 
-Enjoy the awesome video:
+The tutorial I followed:
 
 {{< youtube XtQMytORBmM >}}
