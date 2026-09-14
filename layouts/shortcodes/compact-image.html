@@ -1,0 +1,9 @@
+{{- $src := .Get "src" -}}
+{{- $image := .Page.Resources.GetMatch $src -}}
+<div class="compact-article-media">
+    <img
+        src="{{ with $image }}{{ .RelPermalink }}{{ else }}{{ $src }}{{ end }}"
+        alt="{{ .Get "alt" }}"
+        loading="lazy"
+    >
+</div>

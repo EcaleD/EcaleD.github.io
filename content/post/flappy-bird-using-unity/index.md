@@ -21,8 +21,8 @@ The project was simple, but building it step by step gave me a practical way to 
 
 Here is the version I made:
 
-![Game demo](game_demo.gif)
+{{< compact-image src="game_demo.gif" alt="Game demo" >}}
 
 The tutorial I followed:
 
-{{< youtube XtQMytORBmM >}}
+{{< compact-youtube id="XtQMytORBmM" >}}

@@ -1,0 +1,16 @@
+.article-content .compact-article-media {
+    width: calc(66.6667% + var(--card-padding) * 1.3333);
+    margin: 1.5em auto;
+
+    > img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

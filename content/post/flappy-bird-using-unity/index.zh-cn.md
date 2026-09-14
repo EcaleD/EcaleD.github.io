@@ -21,8 +21,8 @@ image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
 
 这是我完成的版本：
 
-![Game demo](game_demo.gif)
+{{< compact-image src="game_demo.gif" alt="Game demo" >}}
 
 我参考的视频教程：
 
-{{< youtube XtQMytORBmM >}}
+{{< compact-youtube id="XtQMytORBmM" >}}
