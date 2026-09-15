@@ -2,7 +2,7 @@
 author = "Xiaokai Dong"
 title = "The Loop Is the Agent"
 date = "2026-06-13"
-description = "A practical look at agent loops: what keeps them moving, where ordinary software fits, and how a small loop can repair a documentation build."
+description = "What finally made agents click for me was the loop that turns one tool result into the next decision."
 image = "header-image-agent-loop-mobius-warm.png"
 tags = [
     "AI",
@@ -10,8 +10,8 @@ tags = [
     "Automation",
 ]
 categories = [
-    "Vibe Coding",
-    "Doc Workflow",
+    "AI Engineering",
+    "Software Design",
 ]
 +++
 

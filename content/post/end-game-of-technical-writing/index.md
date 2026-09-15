@@ -1,14 +1,15 @@
 +++
 author = "Xiaokai Dong"
 title = "The End Game of Technical Writing"
-date = "2026-09-15"
+date = "2026-05-12"
 description = "A reflection on how AI may shift technical writing from producing pages toward maintaining reliable knowledge for people and machines."
 tags = [
     "AI",
     "Technical Writing",
 ]
 categories = [
-    "Doc Workflow",
+    "Technical Writing",
+    "Career Notes",
 ]
 image = "header-image-end-game-v2.png"
 +++

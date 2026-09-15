@@ -8,7 +8,8 @@ tags = [
     "Tool",
 ]
 categories = [
-    "Vibe Coding",
+    "AI Engineering",
+    "Technical Writing",
     "Doc Workflow",
 ]
 image = "header-image-shooting-star.png"

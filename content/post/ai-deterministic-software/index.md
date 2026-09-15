@@ -8,8 +8,8 @@ tags = [
     "Software Engineering",
 ]
 categories = [
-    "Vibe Coding",
-    "Doc Workflow",
+    "AI Engineering",
+    "Software Design",
 ]
 image = "header-image-deterministic-ai.png"
 +++
