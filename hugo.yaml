@@ -217,12 +217,6 @@ menu:
           params:
               icon: brand-linkedin
 
-        - identifier: github
-          name: GitHub
-          url: https://github.com/EcaleD/EcaleD.github.io
-          params:
-              icon: brand-github
-
 related:
     includeNewer: true
     threshold: 60
