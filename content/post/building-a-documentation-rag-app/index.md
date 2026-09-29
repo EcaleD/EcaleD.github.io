@@ -5,6 +5,7 @@ slug = "building-a-documentation-rag-app"
 date = "2026-07-26T00:00:00+08:00"
 draft = false
 description = "A practical walkthrough of a RAG application's architecture, from structural chunking and hybrid retrieval to cited answers, conversation context, and index updates."
+image = "header-image-rag.png"
 tags = ["AI", "RAG", "Retrieval", "Software Engineering"]
 categories = ["Vibe Coding", "Doc Workflow"]
 +++
