@@ -1,6 +1,7 @@
 +++
 author = "Xiaokai Dong"
-title = "The Loop Is the Agent"
+title = "Inside the Agent Loop: Architecture and Implementation"
+slug = "the-loop-is-the-agent"
 date = "2026-06-13"
 description = "What finally made agents click for me was the loop that turns one tool result into the next decision."
 image = "header-image-agent-loop-mobius-warm.png"
